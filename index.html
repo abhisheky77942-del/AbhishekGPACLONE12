@@ -1,0 +1,939 @@
+<!DOCTYPE html 5.0>
+<html>
+    <head>
+        <title>GPA WEBSITE HOME PAGE</title>
+    </head>
+    <style>
+	body{
+		margin:0;
+	}
+	#wholecontainer{
+		width:100%;
+		height:auto;
+		margin:0 auto;
+	}
+        #toparea{
+            height:30px;
+            width:100%;
+        }
+        #mainarea{
+            background-color:white;
+            height:110px;
+            width:100%;
+        }
+        .logotable{
+            display:flex;
+    
+            
+        }
+        #menuarea{
+            background-color:#FBF7FB;
+            height:40px;
+            width:100%;
+	    display:flex;
+	    align-items:center;	
+	    position:relative;   	   
+        }
+	#menuarea ul{
+		list-style:none;
+		text-align:center;
+		margin:0;
+		padding:0;
+		display: flex;	
+		gap:60px;
+		justify-content:center;
+		align-items:center;
+		font-size:9px;
+		font-weight:bold;
+		position:absolute;
+		left:300px;
+	
+		 		
+	}
+	#menuarea ul li{
+		 float:left;
+		position:relative;
+		padding:40px 0px;	
+	} 
+	#menuarea ul a{
+		color:black;
+		text-decoration:none;
+	}
+	
+	#menuarea ul li a:hover{
+		color:#6E74D0;	
+	}
+	#menuarea ul li ul li{
+		float:none;
+	}
+	#menuarea ul li ul {
+		display:none;
+		position:absolute;
+		top:100%;
+		left:0;
+		padding:10;
+		margin:0;
+		gap:1px;
+		background:white;
+		min-width:250px;
+		box-shadow:0  0 10px gray;
+		z-index:999;
+	} 
+	#menuarea ul li:hover ul{
+		display:block;	
+	} 
+	
+	@keyframes zoomout{
+		0%{
+			transform: scale(1.3);
+		}
+		80%{
+			transform: scale(1);
+		}
+		100%{
+			transform: scale(1);
+		}
+		
+	}
+        .picturearea{
+            	background-color:WHITE;
+            	height: 528px;
+            	width:100%;
+		overflow:hidden;
+        }
+        .picturearea img{
+		width:100%;
+		height:100%;
+		object-fit:cover;
+          	border-radius: 10px;
+		display:block;
+		animation:zoomout 10s linear infinite;
+        }
+        .darea{
+            background-color:white;
+            height: 1400px;
+            width:100%;
+	 
+        }
+	#sliderpart{
+		width:1400px;
+		height:224px;
+		position:relative;
+		top:-120px;
+
+	}
+	#slide{
+		width:1400px;
+		height:183px;
+		display:flex;
+		margin-left:150px;
+	}
+	#slide1{
+		width:462px;
+		height:183px;
+		background:#97FFD7;
+		text-align:center;
+		border-radius:5px;
+	}
+	#slide2{
+		width:462px;
+		height:183px;
+		background:#FFDE85;
+		text-align:center;
+		border-radius:5px;
+	}
+	#slide3{
+		width:462px;
+		height:183px;
+		background:#E6C8FF;
+		text-align:center;
+		border-radius:5px;
+	}
+	#notice{
+		width:1400px;
+		height:40px;
+		background:#0F3184;
+		color:white;
+		margin-left:150px;
+		display:inline-block;
+	}
+	#notice:hover{
+		color:#C0CE3C;
+	}
+	#notice b{
+		color:red;
+		font-size:20px;	
+	}
+	#notice p{
+		text-align:center;	
+	}
+	
+        .activities{
+            display:flex;
+            flex-wrap:wrap;
+            gap:30px;
+        }
+        .card{
+            width:45%;
+            display:flex;
+            border:1px solid lightgray;
+        }
+        .card img{
+            width:200px;
+            height:150px;
+        }
+        .content{
+            margin-left:20px;
+        }
+        button{
+            background:salmon;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+        }
+        #viewmore{
+            width:"1390px";
+            height:"40px";
+            background:"#1AB69D";
+            display:flex;
+            justify-content: center;
+        }
+        .container{
+            display:flex;
+            justify-content: space-between;
+            padding:20px;
+        }
+        .about{
+            width:60%;
+        }
+        .about span{
+            color:#d46a6a;
+        }
+        .about p{
+            line-height:1.8;
+        }
+        .about ul{
+            list-style:none;
+            padding:0;
+        }
+        .about ul li{
+            margin:15px 0;
+        }
+	@keyframes rotate{
+		from{
+			transform:rotate(0deg);
+		}
+		to{
+			transform:rotate(360deg);
+		}
+
+	}
+	.dots-head{
+		position:relative;
+		width:100%;
+		height:400px;
+	}
+	.dots{
+		width:250px;
+		height:250px;
+		border-radius:50%;
+		position:absolute;
+		background:url("dots.png") no-repeat top left;
+		animation:rotate 12s linear infinite;
+		left:50px;
+		top:10px;
+	}
+	
+        .links{
+            width:40%;
+            margin-right:40px;
+        }
+        .links span{
+            color:#d46a6a;
+        }
+        .box{
+            width:150px;
+            height:80px;
+            border:1px solid #add;
+            display:inline-flex;
+            justify-content:center;
+            align-items: center;
+            margin:10px;
+            box-shadow:-10px 0px 15px  rgba(0,0,0,0.25);
+            cursor:pointer;
+            transition:0.3s;
+	    border-radius:50%;
+        }
+        .box:hover{
+	    transform:translateY(-10px);
+	    box-shadow:none;
+        }
+
+        #boxarea{
+            background-color:#F0F4F5;
+            height: 540px;
+            width:100%;
+	}
+	
+        .boxarea1{
+            width:300px;
+	    height:300px;
+            display:block;
+            margin-top:80px;
+            float:left;
+            padding:10px 15px;
+            margin-left:50px;
+            text-align:center;
+        }
+        #boxarea img{
+            width: 324px;
+            height: 236px;
+        }
+	.sign{
+		width:180px;
+		height:33px;
+	}
+        #foothigharea{
+            background-color:#FFFFFF;
+            height: 2000px;
+            width:100%;
+        }
+	#foothigharea h3{
+		text-align:center;
+		color:salmon;
+	}
+	#foothigharea h2{
+		text-align:center;
+	}
+	#buttonarea{ 
+		width:100%;
+		height:44px;
+		float:left;		
+	}
+	.buttonarea1{ 
+		width:500px;
+		height:43px;
+		margin-left:650px;
+		display:flex;
+		gap:15px;
+		
+	}
+	.buttonarea1 button{
+		padding:10px 30px;
+		background:#E1D9D1;
+		font-size:8px;
+	 }
+	.buttonarea1 a{
+		color:white;
+		text-decoration:none;
+		font-style:bold;
+	}
+	.buttonarea1 button:hover{
+		background:salmon;
+	}
+	.buttonarea1 button b{
+		color:black;	
+	}
+	.buttonarea1 button b:hover{
+		color:white;	
+	}
+	
+	#foothightop{
+		width:100%;
+		height:170px;
+		margin-top:50px;
+		margin-left:60px;
+	}
+	#foothightop1{
+		width:100%;
+		height:100px;
+		margin-bottom:140px;
+		margin-left:60px;
+	}
+	.foot1{
+		width:490px;
+		height:167px;
+		float:left;
+		
+	}
+	.foot1 img{
+		width:84px;
+		height:83px;
+		margin-top:20px;
+		margin-right:10px;
+	}
+	.foot1 img:hover{
+		background:blue;
+		text-decoration:underline;
+	}
+        .foot2{
+		margin-right:80px;
+		float:right;
+	}
+	#countarea{
+		width:100%;
+		height:192px;
+		background:#FFFFFF;
+		display:flex;
+		justify-content:center;
+		gap:30px;
+		align-item:center;
+	}
+	.countbox{
+		width:465px;
+		height:136px;
+		background:white;
+		box-shadow:0px 2px 8px rgba(0,0,0,0.15);
+		text-align:center;
+		padding-top:30px;
+		border-radius:10px;
+	}
+	#buttoninfo{
+		width:100%;
+		height:440px;
+		font-style:bold;
+	}
+	#buttoninfo iframe{
+		border:none;
+		outline:none;
+		
+	}
+	.testimonial{
+		width:685px;
+		height:170px;
+		text-align:center;
+		margin-left:400px;
+	}
+	
+	.testimonial p{
+		margin-top:10px;
+		font-size:26px;
+		color:#888686;
+	}
+	#readmore{
+		width:100%;
+		height:435px;
+		display:flex;
+		justify-content:center;
+		gap:30px;
+		margin-left:80px;
+	}
+	
+	.readmore1{
+		width:480px;
+		height:295px;
+		background:white;
+		box-shadow:0px 2px 8px rgba(0,0,0,0.15);
+		border-radius:10px;
+		text-align:center;
+		position:relative;	
+	}
+	.profile{
+		width:120px;
+		height:120px;
+		position:absolute;
+		top:-70px; /*Image ko thoda upar le jayega*/
+		left:40%;
+	}
+	.readmore1 h2{
+		background:salmon;
+		margin-top:80px;
+	}
+	.readmore1 p{
+		padding:0 20px;
+		line-height:30px;
+		font-size:20px;
+		margin:auto;
+		text-align:justify;
+
+		
+	}
+	.readmore1 h3:hover h3{
+		color:#23B9A1;
+	}
+	
+        #addressarea{
+            background-color:#101A4C;
+            height:300px;
+            width:100%;
+	    display:flex;
+	    gap:10px;
+	    margin-bottom:0;
+	    padding-bottom:0;
+	
+        }
+	.importantlink1{
+	    width:324px;
+	    height:294px;
+	    margin-left:160px;
+	}
+	.importantlink1 p{
+		color:#9494A1;	
+	}
+	.importantlink1 h4{
+		color:white;	
+	}
+	.importantlink1 p:hover{
+		color:#1AB69D;	
+	}
+	.importantlink{
+	    width:324px;
+	    height:294px;
+	    font-size:18px;
+	    margin-left:100px;
+	}
+	.importantlink p{
+		color:#9494A1;	
+	}
+	.importantlink h4{
+		color:white;	
+	}
+	.importantlink p:hover{
+		color:#1AB69D;	
+	}
+	.importantlink3{
+		width:260px;
+		height:200px;
+	}
+	.importantlink3 h4{
+		color:white;	
+	}	
+	.importantlink1 img{
+		width:260px;
+		height:200px;
+	}
+	#footerarea{
+		width:100%;
+		height:80px;
+		background-color:#101A4C;
+		color:white;
+		font-size:10px;
+		display:flex;
+		margin-top:-13px;
+	}
+	#foot1{
+		width:568px;
+		border:2px red;
+		justify-content:center;
+		text-align:center;
+		font-size:18px;
+		margin-left:40px;
+		margin-top:15px;
+	}
+	#foot2{
+		width:452px;
+		height:42px;
+		border:2px red;
+		font-size:18px;
+		margin-left:30px;
+		margin-top:15px;
+	}
+	#foot3{
+		width:240px;
+		height:26px;
+		border:2px red;
+		font-size:20px;
+		margin-left:30px;
+	}
+	
+    </style>
+    <body>
+	<div id="wholecontainer">
+        <div id="toparea">
+        <table border="1px" cellspacing="0" width="100%" height="30px" bgcolor="#4177C7">
+            <tr>
+                <td width="904px" align="center"><font color="white" size="4">Email: gpa2010@rediffmail.com</font></td>
+                <td width="338px" border="1px"><img src="https://www.gpa.ac.in/assets/images/about/sbi_logo.jpg" alt="SBI Logo" title="Online fee payment"style="width:338px; height:30px;"/></td>
+                <td width="276px"> 
+                    <i class="fab fa-facebokk"></i>
+                </td>
+            </tr>
+          
+        </table>
+        </div>
+					<!------MAIN AREA----------->
+
+        <div id="mainarea">
+            <table>
+                <tr>
+                    <td style="padding-right:200px;">
+                        <table cellpadding="0px">
+                            <tr>
+                                <td rowspan="2"><img src="logo.png" alt="logo" width="80px" height="80px" vspace="10"/></td>
+                                <td><font color="#2B6C33"><h1>GOVERNMENT POLYTECHNIC,ADITYAPUR</h1></font></td>
+                            </tr>
+                            <tr>
+                                <td style="margin-bottom:20px">Approved by AICTE, New Delhi, DHTE, Govt. of Jharkhand & Affiliated to JUT Ranchi</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table >
+                        <tr>                                  
+                            <td style="padding-right: 80px;"><img src="https://www.gpa.ac.in/home/admission.png" alt="Admission Procedure" width="50px" height="50px"/>
+                            <br><font color="#B73B3B" size="4">Admission</font></td>  
+                            <td style="padding-right: 80px;"><img src="https://www.gpa.ac.in/home/results.png" width="50px" height="50px"/>
+                             <br><font color="#B73B3B" size="4">Results</font></td> 
+                            <td style="padding-right: 80px;"><img src="https://www.gpa.ac.in/home/scholarship.png" width="50px" height="50px"/>
+                            <br><font color="#B73B3B" size="4">Scholarship</font></td>
+                            <td style="padding-right: 80px;"><img src="https://www.gpa.ac.in/home/exam.png" width="50px" height="50px"/>
+                            <br><font color="#B73B3B" size="4">Examination</font></td>
+                        </tr>
+                        
+                        </table>
+                    </td>
+                </tr>
+            
+            </table>
+  
+        </div>
+			
+					<!-----------MENU AREA----------------->
+        <div id="menuarea">
+		<img src="https://www.gpa.ac.in/index.php"/>
+			<ul>
+						
+						<li><a href="#">About</a>
+							<ul>
+								<li><a href="#">About GPA</a></li>
+								<li><a href="#">Principle Desk</a></li>
+								<li><a href="#">Approval,Affiliations & Certifications</a></li>
+								<li><a href="#">Cell & Committee </a>
+								<li><a href="#">RTI</a></li>
+								<li><a href="#">Mandatory Disclosure</a></li>
+							</ul>
+         					</li>
+						<li><a href="#">Academics</a></li>
+						<li><a href="#">Admission</a></li>
+						<li><a href="#">facilities</a></li>
+						<li><a href="#">T & P</a>
+						<li><a href="#">Info Desk</a></li>
+						<li><a href="#">Medias</a></li>
+						<li><a href="#">Contact Us</a>
+			</ul>	
+          </div>
+
+					<!----------PICTURE AREA---------->
+
+
+        <div class="picturearea">
+		<img id="slider" src="slide1.jpg"/>
+	<script>
+		 let images = ["slide2.jpg","slide4.jpg","slide1.jpg","slide5.jpg","slide6.jpg"];
+		 let index = 0;
+          	let slider = document.getElementById("slider");
+		setInterval(function (){
+			index++;
+			if (index == images.length){
+				index = 0;
+			}
+			
+			slider.src = images[index]
+		},4000); //3000 ms = 4 sec
+        </script>
+	 </div>
+
+					<!--------darea--------------->
+
+        <div class="darea">
+		<div id="sliderpart">
+			<div id="slide">
+				<div id="slide1">
+					<h2>Our Institute</h2>
+					<p>Government Polytechnic Adityapur, <br>established in 1980, is a prestigious<br> Government institution located in <br>Jamshedpur, Jharkhand [ more info...]</p>
+				</div>
+				<div id="slide2">
+					<h2>Vision & Mission</h2>
+					<p>Take responsibility and Shaping<br> professionals who contribute effectively<br> to the nation's technological and<br> industrial growth. [ more info...]</p>
+			
+				</div>
+				<div id="slide3">
+					<h2>Facility</h2>
+					<p>Include Hostel Accommodation, Library,<br> Spacious Classrooms, well-equipped<br> laboratories, a computer lab with an<br> internet facility [ more info...]</p>
+				</div>
+				
+			</div>
+			<div id="notice">
+				<marquee scrollment="7" onmouseover="this.stop()" onmouseout="this.start()" align:center;><p><b>Notice |</b> Deployment of Faculty (NBL) for Inspection of Summer Training Centers and Collection of Student Feedback       <b>Notice |</b> Notices for Reconstitution of the Training & Placement Cell       <b>Notice |</b> Notice and Instructions - Farewell Party and Class Suspension Details       <b>Notice |</b>Deployment of Faculty (NBL) for Inspection of Summer Training Centers and Collection of Student Feedback      <b>Notice |</b> Notices for Reconstitution of the Training & Placement Cell     <b> Notice |</b> Notice and Instructions - Farewell Party and Class Suspension Details </p>     
+</marquee>
+			</div>
+		</div>
+            <br><br>
+            <h1>Recent <font color="red">Activities</font></h1><br>
+	    <img src="sign.png"/>
+
+						<!--------activities--------->
+
+            <div class="activities">
+                <div class="card">
+                    <img src="image1.jpg" alt="Activity 1" width="220px" height="180px"/>
+                    <div class="content">
+                        <h2><font color="red">27 APRIL 2026</font></h2>
+                        <h3><b>Expert talk with CSE Branch</b></h3>
+                        <p>An expert talk on Application Development with UI and UX using Figma and Flutter for CSE Branch students. ...</p>
+                        <button>Read More</button></button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="image2.jpg" alt="Activity 2" width="220px" height="180px"/>
+                    <div class="content">
+                        <h2><font color="red">24 APRIL 2026</font></h2>
+                        <h3><b>Application development with UI and UX by using figma and flutter.</b></h3>
+                        <p>An expert talk on Application Development with UI and UX using Figma and Flutter for CSE Branch 4th Semester students wi....</p>
+                        <button>Read More</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="image3.jpg" alt="Activity 3" width="220px" height="180px"/>
+                    <div class="content">
+                        <h2><font color="red">22 APRIL 2026</font></h2>
+                        <h3><b>Earth day celebration</b></h3>
+                        <p>Theme - our power our planet  Competition happened: Poster , speech and nukkad natak happened that day with all 4th...</p>
+                        <button>Read More</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="image4.jpg" alt="Activity 4" width="220px" height="180px"/>
+                    <div class="content">
+                        <h2><font color="red">26 Jan 2026</font></h2>
+                        <h3><b>Republic Day Celebration 2026</b></h3>
+                        <p>Republic Day Celebration 2026 at Government Polytechnic, Adityapur. ...
+                        <button>Read More</button>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div id="viewmore">
+                    <button >View More</button>
+                </div>
+            </div>
+
+					<!------container------------>
+
+            <div class="container">
+                <div class="about">
+		     <div class="dots-head">
+		   	     <div class="dots"></div>
+		
+					<h2>About<span> Government Polytechnic,</span> Adityapur</h2>
+                    
+                        <a href="#"><b>About Institute</b></a>
+                        <a href="#"><b>Our Mission</b></a>
+                        <a href="#"><b>Our Vision</b></a>
+                    	<br>
+                    <p>Government Polytechnic, Adityapur, established in 1980, is a premier state-<br>
+                        government technical institute under the Department of Higher Technical <br>
+                        Education & Skill Development, Government of Jharkhand. [ more info...]
+                    </p>
+                    <ul>
+                        <li>State-of-the-art laboratories and workshops</li><br>
+                        <li>Industry-focused diploma programmes</li>
+                    </ul>
+			</div>
+                </div>
+
+              					  <!-------Useful Link Section-->
+
+                <div class="links">
+                    <h2>Useful <span> Links </span></h2>
+                    <div class="box"><b>Admission</b></div>
+                    <div class="box"><b>Placements</b></div>
+                    <div class="box"><b>Scholarship</b></div>
+                    <div class="box"><b>RTI</b></div>
+                    <div class="box"><b>AICTE Approval</b></div>
+                    <div class="box"><b>Departments</b></div>
+                    <div class="box"><b>Faculty</b></div>
+                    <div class="box"><b>Aca.Calender</b></div>
+                </div>
+
+            </div>
+        </div>
+
+						 <!------BOX AREA-------->
+
+        <div id="boxarea">
+            <h1>Our <font color="salmon">Department</font></h1>
+		        <div class="boxarea1">	
+			        <img src="csegpa.jpg" alt="csgpa picture" title="CS engg"/>
+                    <p><b>Diploma In Computer Science & <br> Engineering <br><br> Eligibility:</b >10<sup>th</sup> pass</p>
+			    </div>
+                <div class="boxarea1">	
+			        <img src="electricalgpa.jpg" alt="electgpa picture" title="elctrical engg"/>
+                    <p><b>Diploma In  Electrical Engineering <br><br> Eligibility:</b>10<sup>th</sup> pass</p>
+			    </div>
+                <div class="boxarea1">	
+			        <img src="mechanicalgpa.jpg" alt="mechgpa picture" title="mechnical engg"/>
+                     <p><b>Diploma In Mechnical Engineering <br><br> Eligibility:</b>10<sup>th</sup> pass</p>
+			    </div>
+                <div class="boxarea1">	
+			        <img src="metallurgicalgpa.jpg" alt="metgpa picture" title="metallurgical engg"/>
+                     <p><b>Diploma In  Metallurgical Engineering <br><br> Eligibility:</b>10<sup>th</sup> pass</p>
+			    </div>
+        </div>
+	
+							<!-----FOOTHIGHAREA------->
+
+        <div id="foothigharea">
+            	<h3>Advantages @ GPA</h3>
+		<h2>Why Choose Government Polytechnic Adityapur</h2>
+		<center><img src="psymbol.png" alt="apsymbol"/></center>
+		<div id="foothightop">
+			 <div class="foot1">
+				<img src="download.png"/>
+				<div class="foot2">
+                        		<h5>Placement Support</h5>
+					<p>Consistent placement support with <br> participation from reputed core and IT<br> sector industries.</p>
+				</div>
+                    	</div>
+			 <div class="foot1">
+				<img src="download.png"/>
+				<div class="foot2">
+                        		<h5>Affordable Eduaction</h5>
+					<p>State-funded technical education with<br> highly affordable fees for all<br> categories</p>                    
+				</div>
+	                  </div>
+
+			 <div class="foot1">
+				<img src="download.png"/>
+				<div class="foot2">
+                        		<h5>Scholarship Facilities</h5>
+					<p>Eligible students can avail state government<br> scholarships including E-<br>Kalyan scheme.</p>
+				</div>
+                    	</div>
+
+             
+                </div>
+		<div id="foothightop1">
+			 <div class="foot1">
+				<img src="download.png"/>
+				<div class="foot2">
+                        		<h5>Placement Support</h5>
+					<p>Consistent placement support with <br> participation from reputed core and IT<br> sector industries.</p>
+				</div>
+                    	</div>
+			 <div class="foot1">
+				<img src="download.png"/>
+				<div class="foot2">
+                        		<h5>Affordable Eduaction</h5>
+					<p>State-funded technical education with<br> highly affordable fees for all<br> categories</p>                    
+				</div>
+	                  </div>
+
+			 <div class="foot1">
+				<img src="download.png"/>
+				<div class="foot2">
+                        		<h5>Scholarship Facilities</h5>
+					<p>Eligible students can avail state government<br> scholarships including E-<br>Kalyan scheme.</p>
+				</div>
+                    	</div>
+                </div>
+		<div id="countarea">
+			<div class="countbox">
+				<h1><font color="#1AB69D">1,470</font></h1>
+				<p>TOTAL STUDENT</p>
+			</div>
+			<div class="countbox">
+				<h1><font color="salmon">1,170</font></h1>
+				<p>PASSOUT  STUDENT</p>
+			</div>
+			<div class="countbox">
+				<h1><font color="#8E56FF">100%</font></h1>
+				<P>RESULTS</p>
+			</div> 
+		</div>
+					<!-------Gallery(PHOTO,VIDEOS,PRESS)---------->
+
+		<center><h1>OUR GALLERY</h1></center>
+		<center><img src="sign.png"/></center><br><br>
+		<div id="buttonarea">
+			<div class="buttonarea1">
+				<button><a href="photos.html" target="Happy"><b>PHOTOS</b></a></b></button>
+				<button><b><a href="video.html" target="Happy">VIDEOS</b></a></button>
+				<button><b><a href="pressclip.html" target="Happy">PRESS CLIPS</a></b></button>
+			</div>
+		</div><br>
+		<div id="buttoninfo">
+			<iframe src="photos.html" width="100%" height="100%" name="Happy"></iframe>
+		</div><br><br>
+
+					<!---------Testimonials------------->
+
+		<div class="testimonial">
+			<p>Testimonials</p>
+			<h2>What Our Students Say</h2>
+			<img src="sign.png"/>
+		</div><br><br>
+		<div id="readmore">
+			<div class="readmore1">
+				<img src="male.jpg" alt="Male_student" class="profile"/>
+				<h2>Sumit Panda</h2>
+				<p>This is one of the best polytechnic colleges in Jharkhand for placements. Major companies like Tata Steel, Wipro, and JSPL visit for recruitment, and many students get placed every year. . ...</p><h3>read more <b> &rarr;</b></h3>
+
+			</div>
+			<div class="readmore1">
+				<img src="female.jpg" alt="FeMale_student" class="profile"/>
+				<h2>Liliy Rugu</h2>
+				<p>The curriculum is relevant to industry needs and makes students industry-ready.Teachers are helpful and the quality of teaching is good.....</p><h3>read more <b>&rarr;</b> </h3>
+			</div>
+			<div class="readmore1">
+				<img src="male.jpg" alt="Male_student" class="profile"/>
+				<h2>Ravi Xaxa</h2>
+				<p>The faculty members are well qualified and very supportive.They help students understand concepts clearly and many students get acmpus placements...</p><h3>read more <b> &rarr;</b></h3>
+	
+			</div>
+		</div>
+	</div>
+				<!------(important link, addess)------------>
+
+        <div id="addressarea">
+            		<div class="importantlink1">
+				<h4>QUICK LINKS</h4>
+				
+					<p>→ MHRD</p>
+					<p>→ AICTE</p>
+					<p>→ Govt. of Jharkhand</p>
+					<p>→ JUT Ranchi</p>
+					<p>→ SBTE Jharkhand</p>
+					<p>→ Anti Ragging</p>				
+			</div>
+            		<div class="importantlink">
+				<h4>NAVIGATION</h4>
+					<p>→ Mandatory Disclosure</p>
+					<p>→ T&P</p>
+					<p>→ Admission</p>
+					<p>→ Syllabus</p>
+					<p>→ Academic Calender</p>
+					<p>→AICTE Scholarship/Fellowship Schemes </p>
+			</div>
+            		<div class="importantlink3">
+				<h4>ANTI RAGGING</h4>
+				<img src="anti_ragging_img.jpg"/>
+			</div>
+            		<div class="importantlink">
+				<h4>ADDRESS</h4>
+				<p>Government Polytechnic Adityapur
+				Adityapur Industrial Area
+				Seraikella-Kharsawan
+				Adityapur, Jamshedpur – 832109
+				Jharkhand, India</p>
+			</div>	
+			
+	</div>
+			<!-----footerarea------>
+	<div id="footerarea">
+			<hr style="border:solid 3px black;">
+			<div id="foot1">
+				<p>&copy; 2026 Govt. Polytechnic, Adityapur. All Rights Reserved.</p>
+			</div>
+			<div id="foot2">
+				<p>Technology Partner :  COMPUTER Ed.</p>
+			</div>
+			<div id="foot3">
+			</div>
+	</div>
+	</div>
+	
+	
+    </body>
+</html>
